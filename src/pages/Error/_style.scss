@@ -1,0 +1,64 @@
+@import "../../assets/scss/sass-loader.scss";
+
+.err {
+  border-radius: 0.75rem;
+  position: relative;
+  background-color: $white;
+
+  &__cont {
+    width: 100%;
+    min-height: calc(100vh - 145px);
+    height: 100%;
+    @include d-flex-center;
+    padding: 1rem;
+
+    &::before {
+      content: "";
+      width: 10.438rem;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url("../../assets/images/error-left.webp");
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: 1;
+    }
+
+    &::after {
+      content: "";
+      width: 9.75rem;
+      height: 100vh;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: url("../../assets/images/error-right.webp");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: 100% 100%;
+      z-index: 1;
+    }
+  }
+
+  &__inner {
+    @include d-flex-center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 31.25rem;
+  }
+
+  &__heading {
+    margin-bottom: 0.75rem;
+  }
+
+  &__desc {
+    margin-bottom: 1.5rem;
+    max-width: 23.063rem;
+    width: 100%;
+    color: rgba($black, 80%);
+  }
+}
