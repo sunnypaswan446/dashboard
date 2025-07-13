@@ -1,0 +1,96 @@
+@import "./sass-loader.scss";
+@import "./components/main";
+@import "./pages/404-page";
+@import "./pages/changePasswordScreen";
+@import "./pages/authentication";
+@import "./pages/connectApp";
+@import "./pages/home-page";
+@import "./pages/server-page";
+@import "./pages/domain";
+@import "./pages/ssl";
+@import "./pages/billing";
+@import "./pages/payment-method.scss";
+@import "./pages/my-detail";
+@import "./pages/add-funds";
+@import "./pages/support";
+@import "./pages/referral";
+
+// Dashboard Page Layout
+.layout {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+
+  &__cont {
+    width: 100%;
+    max-width: calc(100% - 91px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__inner {
+    padding: 2rem 2.5rem 2rem 0;
+    background-color: $background-color;
+    @include d-flex(row, stretch, flex-start);
+    max-height: calc(100vh - 9.125rem);
+    height: 100%;
+    gap: 20px;
+    flex: 1;
+  }
+
+  &__link {
+    display: block;
+    color: $black;
+  }
+
+  &__aside {
+    width: 100%;
+    max-width: 280px;
+    min-width: 17.525rem;
+    background-color: $white;
+    border-radius: 0 0.75rem 0.75rem 0;
+    padding-block: 1.5rem 2rem;
+  }
+
+  &__aside-wrap {
+    height: 100%;
+    overflow: auto;
+    padding-inline: 1.5rem;
+    background-color: inherit;
+    display: flex;
+    @include custom-scrollbar;
+    margin-top: 1.25rem;
+    background-color: $white;
+  }
+
+  &__content {
+    @include d-flex(column, flex-start, flex-start);
+    background-color: $white;
+    border-radius: 0.75rem;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__panel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  &__itm:last-child {
+    & .accord__item {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.aside {
+  &__cont {
+    display: flex;
+  }
+  &__menus {
+    display: flex;
+    flex-direction: column;
+  }
+}

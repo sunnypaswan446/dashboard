@@ -1,0 +1,127 @@
+.btn {
+  font-family: $font-jakarta;
+  &--solid,
+  &--outline,
+  &--bg {
+    border-radius: 4px;
+    border: 1px solid;
+    text-align: center;
+    padding: 11px 52px;
+    @include d-flex-center;
+    padding-inline: 63px;
+    gap: 8px;
+
+    & img {
+      max-width: 1rem;
+    }
+
+    & span {
+      font-family: $font-jakarta;
+      font-size: $fs-md;
+      font-weight: $fw-bold;
+      white-space: nowrap;
+    }
+  }
+
+  &--solid {
+    border: none;
+    padding-block: 12px;
+    color: white;
+    background-color: $primary-color;
+    transition: none;
+
+    &:hover {
+      background: $linear-light;
+    }
+  }
+
+  &--outline {
+    border-color: $primary-color;
+    color: $primary-color;
+    background-color: transparent;
+
+    & img {
+      filter: brightness(0) saturate(100%) invert(26%) sepia(64%)
+        saturate(7312%) hue-rotate(193deg) brightness(89%) contrast(100%);
+    }
+
+    &:hover {
+      box-shadow: $shadow;
+    }
+  }
+
+  &--bg {
+    background-color: $background-color;
+    border-color: $background-color;
+    color: $primary-color;
+
+    & img {
+      filter: brightness(0) saturate(100%) invert(26%) sepia(64%)
+        saturate(7312%) hue-rotate(193deg) brightness(89%) contrast(100%);
+    }
+
+    &:hover {
+      border-color: $primary-color;
+    }
+  }
+
+  &--grad {
+    padding-block: 12px;
+    background: $linear-light;
+    border: none;
+    color: $white;
+
+    &:hover {
+      background: $primary-color;
+    }
+  }
+
+  &--md {
+    text-align: center;
+    width: 100px;
+    padding: 5px;
+    color: $white;
+    cursor: default;
+    border-radius: 4px;
+  }
+
+  &--red {
+    background-color: $red;
+  }
+
+  &--green {
+    background-color: $green;
+  }
+
+  &--yellow {
+    background-color: $yellow;
+  }
+
+  &--gray {
+    color: rgb($black, 50%);
+    background-color: $background-color;
+  }
+
+  &--sm {
+    border-radius: 5px;
+    width: 80px;
+    padding: 5px;
+    color: $white;
+    cursor: default;
+    text-align: center;
+  }
+
+  &--darkRed {
+    background-color: $dark-red;
+  }
+}
+
+.content {
+  background-color: $background-color;
+  display: flex;
+  gap: 1.25rem;
+  padding-right: 1.25rem;
+  & .home {
+    margin-top: 1.25rem;
+  }
+}

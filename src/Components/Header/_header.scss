@@ -1,0 +1,147 @@
+@import "../../assets/scss/sass-loader.scss";
+@import "../../assets/scss/Particles/base";
+@import "../../assets/scss/Particles/resets";
+@import "../../assets/scss/Particles/button";
+@import "../../assets/scss/components/form";
+@import "../../assets/scss/components/checkboxAndRadio";
+
+.nav {
+  &__cont {
+    position: relative;
+    @include d-flex(row, flex-start, flex-start);
+
+    &--login {
+      .nav {
+        &__inner {
+          padding: 0.875rem 2.5rem;
+        }
+
+        &__ssdLogo {
+          max-width: 72px;
+        }
+
+        &__userProf {
+          max-width: 2.25rem;
+        }
+      }
+    }
+  }
+
+  &__logo {
+    width: 91px;
+    height: 5rem;
+    @include d-flex-center;
+    background-color: $black;
+  }
+
+  &__ssdLogo {
+    max-width: 61px;
+    display: block;
+    cursor: pointer;
+  }
+
+  &__inner {
+    padding: 1.25rem 2.5rem 1.25rem 2rem;
+    @include d-flex(row, center, space-between);
+    flex: 1;
+  }
+
+  &__right {
+    @include d-flex(row, center, flex-start);
+    justify-content: end;
+    flex: 1;
+    gap: 0;
+  }
+
+  &__srch {
+    width: 373px;
+    background-color: rgb($gray, 32%);
+    @include d-flex(row, center, flex-start);
+    padding: 0.563rem 0.75rem;
+    border-radius: 0.25rem;
+    margin-right: 1.25rem;
+  }
+
+  &__img {
+    display: block;
+    margin-right: 3px;
+    max-width: 1rem;
+  }
+
+  &__srchInput {
+    border: none;
+    width: 100%;
+    background-color: transparent;
+    flex: 1;
+
+    &:focus {
+      outline: none;
+      border: none;
+    }
+  }
+
+  &__icons {
+    @include d-flex(row, center, flex-start);
+
+    &--prof {
+      & .nav {
+        &__cart {
+          margin-right: 1.1rem;
+        }
+      }
+    }
+  }
+
+  &__notify {
+    width: 2.5rem;
+    height: 2.5rem;
+    @include d-flex-center;
+    margin-right: 0.75rem;
+  }
+
+  &__notifyIcon {
+    max-width: 1.25rem;
+    cursor: pointer;
+  }
+
+  &__cart {
+    position: relative;
+    @include d-flex-center;
+    margin-right: 1.95rem;
+  }
+
+  &__cartIcon {
+    max-width: 1.5rem;
+    display: block;
+    cursor: pointer;
+  }
+
+  &__cartItem {
+    position: absolute;
+    right: -18px;
+    top: -12px;
+    width: 19px;
+    height: 19px;
+    text-align: center;
+    padding: 4px 0;
+    line-height: 100%;
+    border-radius: 50%;
+    background-color: $secondary-color;
+    color: $white;
+  }
+
+  &__userProf {
+    max-width: 2.5rem;
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.active-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 2px; /* Thickness of the sliding indicator */
+  width: 100%; /* Full width of one menu item */
+  background-color: #00f; /* Color of the active indicator */
+  transition: left 0.3s ease; /* Smooth sliding transition */
+}
