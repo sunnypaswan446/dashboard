@@ -1,0 +1,42 @@
+@import "../../assets/scss/sass-loader.scss";
+
+.ftr {
+  &__inner {
+    padding: 1.05rem 2rem;
+    background-color: $white;
+    border-top: 1px solid $tertiary-color;
+    @include d-flex(row, center, space-between);
+    gap: 1rem;
+  }
+
+  &__menus {
+    @include d-flex(row, flex-start, flex-start);
+    gap: 2rem;
+  }
+
+  &__links {
+    font-family: $font-inter;
+    color: rgb($black, 1);
+  }
+
+  &__copyright {
+    color: rgb($black, 0.5);
+  }
+
+  .social {
+    @include d-flex(row, flex-start, flex-start);
+    gap: 0.5rem;
+
+    &__links {
+      width: 1.875rem;
+      height: 1.875rem;
+      background-color: rgb($primary-color, 0.16);
+      border-radius: 50%;
+      @include d-flex-center;
+    }
+
+    &__icons {
+      width: 1.25rem;
+    }
+  }
+}
