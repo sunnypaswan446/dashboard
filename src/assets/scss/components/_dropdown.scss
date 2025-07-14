@@ -1,0 +1,241 @@
+// Accordion
+.accord {
+  margin-bottom: 1.25rem;
+
+  &__head {
+    background-color: $tertiary-color;
+    border-radius: 6px;
+    padding: 10px 12px;
+    @include d-flex(row, center, flex-start);
+    transition-delay: 0.5s;
+  }
+
+  &__logo {
+    margin-right: 0.375rem;
+    max-width: 1rem;
+  }
+
+  &__arrow {
+    cursor: pointer;
+  }
+
+  &__icon {
+    transition: 0.3s all ease;
+
+    &.rotate {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__title {
+    flex: 1;
+  }
+
+  &__icon {
+    max-width: 16px;
+    display: block;
+  }
+
+  &__items {
+    max-height: 700px;
+    overflow: hidden;
+    margin-top: 0.75rem;
+    transition: 0.3s ease-in-out;
+  }
+
+  &__item {
+    font-family: $font-inter;
+    display: block;
+    color: $black;
+    padding: 0.563rem;
+    border: 1px solid $background-color;
+    border-radius: 0.375rem;
+    margin-bottom: 0.75rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: $shadow;
+    }
+
+    &--active {
+      background-color: $background-color;
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+
+    &--checkbox {
+      &:last-child {
+        & .checkbox__wrap {
+          margin-bottom: 0;
+        }
+      }
+
+      & .checkbox {
+        display: block;
+
+        &__wrap {
+          padding: 0.375rem 0.625rem;
+          margin-bottom: 0.65rem;
+          border: 1px solid $background-color;
+          border-radius: 0.375rem;
+          transition: all 0.3s ease;
+          cursor: pointer;
+          @include d-flex(row, center, flex-start);
+        }
+
+        &__input:checked ~ .checkbox {
+          &__wrap {
+            border-color: $background-color;
+            background-color: $background-color;
+
+            & .checkbox {
+              &__mark {
+                border-color: $primary-color;
+
+                &::after {
+                  content: "";
+                  position: absolute;
+                }
+              }
+            }
+
+            & .accord__qty {
+              color: $white;
+              background-color: $primary-color;
+            }
+          }
+        }
+      }
+
+      & .accord {
+        &__title {
+          font-size: $fs-md;
+          line-height: 155%;
+          cursor: pointer;
+        }
+
+        &__qty {
+          font-size: $fs-sm;
+          line-height: 150%;
+          padding: 1px 0.375rem;
+          border-radius: 2px;
+          background: $background-color;
+          color: $black;
+        }
+      }
+    }
+  }
+
+  &__desc {
+    @include d-flex(row, flex-start, space-between);
+    gap: 1rem;
+    color: $gray;
+    margin-top: 3px;
+  }
+
+  &--trcd {
+    border: 1px solid $background-color;
+    background-color: $white;
+  }
+}
+
+// Items Tabs UI Variations
+.item {
+  padding: 0.438rem 0.625rem;
+  @include d-flex(row, center, flex-start);
+  border: 1px solid $background-color;
+  border-radius: 0.375rem;
+  margin-bottom: 1.25rem;
+  transition: 0.3s all ease;
+  max-width: 233px;
+  cursor: pointer;
+
+  &__icon {
+    max-width: 1.25rem;
+    margin-right: 0.25rem;
+  }
+
+  &__img {
+    display: block;
+  }
+
+  &:hover {
+    border-color: $background-color;
+    background: $background-color;
+  }
+
+  &--active {
+    border-color: $tertiary-color;
+    background: $tertiary-color;
+    color: $secondary-color;
+
+    & .item__img {
+      filter: invert(55%) sepia(37%) saturate(3942%) hue-rotate(161deg)
+        brightness(96%) contrast(104%);
+    }
+  }
+
+  &__width {
+    max-width: 185px;
+
+    &--select {
+      border-color: $tertiary-color;
+      background: $tertiary-color;
+    }
+  }
+
+  &__blue {
+    padding: 0.688rem;
+    border: 1px solid rgb($black, 16%);
+    border-radius: 0.375rem;
+    @include d-flex(row, center, flex-start);
+    transition: 0.3s all ease;
+    margin-bottom: 1.25rem;
+    max-width: 307px;
+
+    & .item__icon {
+      max-width: 1.5rem;
+      margin-right: 0.625rem;
+    }
+
+    &:hover {
+      box-shadow: $shadow;
+      border-color: transparent;
+    }
+
+    &--active {
+      box-shadow: $shadow;
+      color: $primary-color;
+      border-color: $white;
+      background-color: $white;
+    }
+  }
+
+  &__center {
+    max-width: 212px;
+    width: 100%;
+    background: $background-color;
+    @include d-flex-center;
+    padding: 1.063rem 2.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.25rem;
+
+    & .item__icon {
+      max-width: 1.5rem;
+      margin-right: 2px;
+    }
+
+    &:hover,
+    &:focus,
+    &--active {
+      background: $linear;
+    }
+  }
+}
+
+.hide {
+  max-height: 0;
+}
