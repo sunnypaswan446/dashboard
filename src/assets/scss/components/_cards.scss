@@ -1,0 +1,80 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+
+  & .card {
+    position: relative;
+    padding: 1.25rem 2.5rem 1.25rem 1.25rem;
+    @include d-flex(column, flex-start, flex-start);
+    border-radius: .75rem;
+    transition: .3s all ease;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: $shadow;
+    }
+
+    &--bg {
+      background-color: $white;
+      box-shadow: $shadow;
+    }
+
+    &__heading {
+      font-size: $fs-5xl;
+      line-height: 100%;
+      margin-bottom: .5rem;
+    }
+
+    &__heading,
+    &__subhead {
+      max-width: 6.563rem;
+    }
+
+    &__desc {
+      color: rgb($black, 70%);
+    }
+
+    &__img {
+      position: absolute;
+      right: 1.25rem;
+      top: 1.25rem;
+      z-index: 0;
+    }
+
+    &__icon {
+      max-width: 3.25rem;
+      display: block;
+    }
+
+    &__bg {
+      position: absolute;
+      right: -65px;
+      top: -65px;
+      width: 164px;
+      height: 164px;
+      border-radius: 50%;
+      display: inline-block;
+      background: $linear;
+      z-index: 0;
+    }
+  }
+}
+
+// No Record Sections
+.rcrd {
+  @include d-flex(column, center, center);
+  flex: 1;
+  padding: 1rem;
+
+  &__img {
+    width: 100%;
+    max-width: 423px;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    text-align: center;
+  }
+}

@@ -1,0 +1,30 @@
+.det {
+  padding-block: 1.5rem;
+
+  &__cont {
+    padding: 0 1.5rem;
+    overflow: scroll;
+    @include custom-scrollbar;
+  }
+
+  & .form {
+    max-width: 100%;
+  }
+
+  & .checkbox {
+    display: block;
+
+    &__input:checked~.checkbox__mark::after {
+      content: "";
+      position: absolute;
+    }
+  }
+
+  & .checkbox:last-child {
+    margin-bottom: 2rem;
+
+    & .email__items {
+      margin-bottom: 0;
+    }
+  }
+}

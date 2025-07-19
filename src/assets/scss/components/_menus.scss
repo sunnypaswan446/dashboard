@@ -1,0 +1,123 @@
+.aside {
+  background-color: $black;
+  max-width: 92px;
+  background-color: $black;
+
+  &__ssdLogo {
+    max-width: 72px;
+  }
+
+  &__logo {
+    width: 91px;
+    height: 5rem;
+    @include d-flex-center;
+    background-color: $black;
+  }
+
+  & .menus {
+    padding: 4rem 0 0 1.25rem;
+
+    &__items {
+      position: relative;
+    }
+
+    &__links {
+      max-width: 4.5rem;
+      width: 100%;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 2;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &--select {
+        & img {
+          filter: brightness(0) saturate(100%) invert(22%) sepia(83%)
+            saturate(2284%) hue-rotate(188deg) brightness(98%) contrast(95%);
+        }
+
+        & .menus {
+          &__bg {
+            display: inline-block;
+          }
+
+          &__label {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+
+    &__links {
+      width: 100%;
+      @include d-flex-center(column);
+      padding-block: 0.563rem 0.25rem;
+      min-width: 71px;
+
+      &.active {
+        background: $white;
+        border-radius: 0.75rem;
+
+        & .menus {
+          &__label {
+            color: $primary-color;
+          }
+
+          &__img {
+            filter: brightness(0) saturate(100%) invert(23%) sepia(43%)
+              saturate(4118%) hue-rotate(189deg) brightness(97%) contrast(102%);
+          }
+        }
+      }
+    }
+
+    &__label {
+      color: $white;
+      text-align: center;
+    }
+
+    &__img {
+      max-width: 2.5rem;
+    }
+
+    &__icon {
+      display: block;
+    }
+
+    &__bg {
+      display: inline-block;
+      width: 72px;
+      height: 72px;
+      margin-right: 0;
+      background-color: #fff;
+      position: absolute;
+      z-index: 2;
+      border-radius: 12px 0 0 12px;
+      transition: 0.3s all ease;
+
+      &::before {
+        content: "";
+        position: absolute;
+        background-color: transparent;
+        right: 0;
+        height: 50%;
+        width: 12px;
+        top: 72px;
+        border-top-right-radius: 12px;
+        box-shadow: 0 -12px 0 0 #fff;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: transparent;
+        right: 0;
+        height: 50%;
+        width: 12px;
+        bottom: 72px;
+        border-bottom-right-radius: 12px;
+        box-shadow: 0 12px 0 0 #fff;
+      }
+    }
+  }
+}

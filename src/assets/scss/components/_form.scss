@@ -1,0 +1,129 @@
+.form {
+  padding: 1.5rem;
+  max-width: 1008px;
+}
+
+.err {
+  &__text {
+    display: block;
+    color: $red;
+    font-size: $fs-md;
+    line-height: 140%;
+    margin-block: .325rem;
+    margin-left: 2px;
+  }
+}
+
+.detail {
+  margin-bottom: 1.25rem;
+  background: url("../../images/cards.svg");
+
+  &__heading {
+    margin-bottom: .75rem;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem
+  }
+
+  &__label {
+    @include d-flex(column, flex-start, flex-start);
+  }
+
+  &__text {
+    margin-bottom: 2px;
+    color: rgba($black, 80%);
+  }
+
+  &__input {
+    padding: .88rem .75rem;
+    border-radius: .5rem;
+    border: 1px solid $border-color;
+    color: rgba($black, 60%);
+    transition: .3s all ease;
+
+    &--pswrd {
+      position: relative;
+      width: 100%;
+    }
+
+    &--sel {
+      appearance: none;
+      background: url("../images/arrow-icon.png") no-repeat right;
+      background-position-x: calc(100% - 12px);
+      -webkit-appearance: none;
+
+      &:focus {
+        outline: 1px solid $secondary-color;
+        border-color: transparent;
+      }
+    }
+
+    &__option {
+      padding: .88rem .75rem;
+      border-radius: .5rem;
+      border: 1px solid $border-color;
+    }
+
+    &:hover {
+      box-shadow: $shadow;
+      border-color: transparent;
+    }
+  }
+
+  &__note {
+    margin-top: .39rem;
+    color: rgba($black, 60%);
+  }
+
+  &__field {
+    width: 100%;
+    position: relative;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    max-width: 24px;
+    cursor: pointer;
+  }
+
+  &__img {
+    display: block;
+
+    &--show {
+      display: none;
+    }
+  }
+
+  & .error {
+    display: none;
+    margin-top: 2px;
+  }
+}
+
+.email {
+  &__heading {
+    margin-bottom: 1.25rem;
+  }
+
+  &__inner {
+    @include d-flex(column, flex-start, flex-start);
+  }
+
+  &__items {
+    @include d-flex(row, center, flex-start);
+    padding: .56rem .875rem;
+    border: 1px solid $border-color;
+    margin-bottom: .75rem;
+    border-radius: .5rem;
+    color: rgba($black, 70%);
+  }
+
+  &__save {
+    margin-right: 2rem;
+  }
+}
