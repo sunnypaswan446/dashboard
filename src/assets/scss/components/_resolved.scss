@@ -1,0 +1,80 @@
+.resol {
+  padding: 1.25rem;
+  display: inline-block;
+  width: 100%;
+  max-width: 1000px;
+  @include d-flex(column, flex-start, flex-start);
+  gap: 1.25rem;
+
+  &__card {
+    border-radius: .75rem;
+    border: 1px solid $border-color;
+    transition: .3s all ease;
+
+    &:hover {
+      box-shadow: $shadow;
+      border-color: transparent
+    }
+  }
+
+  &__top {
+    @include d-flex(row, center, flex-start);
+    padding: 1rem;
+    border-bottom: 1px solid $border-color;
+  }
+
+  &__btn {
+    margin-left: auto;
+
+  }
+
+  &__bottom {
+    padding: 1rem 1rem 1.75rem 1rem;
+  }
+
+  &__head {
+    @include d-flex(row, center, flex-start);
+    margin-bottom: .75rem;
+  }
+
+  &__heading {
+    color: $primary-color
+  }
+
+  &__subheading {
+    margin-left: 3px;
+    flex: 1;
+  }
+
+  &__sche,
+  &__history {
+    @include d-flex(row, center, flex-start);
+    background-color: $background-color;
+    padding: 10px;
+  }
+
+  &__sche {
+    margin-right: 1.25rem;
+  }
+
+  &__icon {
+    display: block;
+  }
+
+  &__img {
+    max-width: 20px;
+    margin-right: 6px;
+  }
+
+  &__desc {
+    opacity: .8;
+    margin-bottom: 1rem;
+  }
+
+  &__note {
+    opacity: .8;
+    font-family: $font-jakarta;
+    font-style: italic;
+    font-weight: $fw-regular - 100;
+  }
+}
