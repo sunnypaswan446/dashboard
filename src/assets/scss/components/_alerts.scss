@@ -1,0 +1,83 @@
+.alert {
+  font-family: $font-inter;
+  line-height: 140%;
+  padding: .375rem 1rem;
+  border-radius: .25rem;
+  margin-bottom: .75rem;
+
+  & h1 {
+    font-size: $fs-2xl;
+  }
+
+  & h2 {
+    font-size: $fs-xl;
+  }
+
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    font-size: $fs-lg;
+  }
+
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    font-family: $font-jakarta;
+    margin-bottom: .75rem;
+  }
+
+  & p {
+    font-size: $fs-xl;
+  }
+
+  & a {
+    color: $primary-color;
+    font-weight: $fw-medium;
+  }
+
+
+  &--padding {
+    padding-right: 4rem;
+  }
+
+  &--info {
+    color: $primary-color;
+    padding: .7rem 1.25rem;
+    background-color: $tertiary-color;
+    border: 1px solid $primary-color;
+    position: relative;
+  }
+
+  &__close{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+
+    &--icon{
+      display: block;
+    }
+  }
+
+  &--success {
+    font-size: $fs-lg;
+    font-weight: $fw-regular;
+    color: $green;
+    border: 1px solid $green;
+    background-color: lighten($green, 52%);
+  }
+
+  &--failure {
+    font-weight: $fw-regular;
+    font-size: $fs-lg;
+    color: $red;
+    border: 1px solid $red;
+    background-color: lighten($red, 37%);
+  }
+
+}
