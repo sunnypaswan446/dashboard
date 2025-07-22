@@ -1,0 +1,398 @@
+.sppt {
+  &__cont {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    @include d-flex(column, flex-start, flex-start)
+  }
+
+  &__heading {
+    margin-bottom: 0.75rem;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  & .nav {
+    &__srch {
+      width: 10.25rem;
+      margin-right: 0px;
+    }
+  }
+
+  &__wrap {
+    @include d-flex(column, flex-start, flex-start);
+    flex: 1;
+    margin-bottom: 1.25rem;
+    overflow: scroll;
+    position: relative;
+    z-index: 5;
+    @include custom-scrollbar;
+  }
+
+  &__details {
+    @include d-flex(row, center, space-between);
+    margin-bottom: 1rem;
+    margin-right: 5px;
+  }
+
+  &__seemore {
+    padding: 6px 2.063rem;
+  }
+
+  &__info {
+    border: 1px solid rgba($black, 10%);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  &__subinfo {
+    @include d-flex(row, flex-start, flex-start);
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+
+  &__subicon {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 1px 4px;
+
+    img {
+      width: 1rem;
+      height: 1.375rem;
+      display: block;
+    }
+  }
+
+  &__text {
+    color: rgba($black, .4);
+  }
+
+  &--opnTckt {
+    & .sppt {
+      &__cont {
+        padding: 1.5rem;
+      }
+
+      &__subhead {
+        margin-bottom: 1.25rem;
+        color: $black;
+      }
+    }
+
+    & .item {
+      &__link {
+        &:hover {
+          & .item {
+            &__blue {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+
+      &__blue {
+        margin-bottom: 0px;
+        max-width: 100%;
+        color: $black;
+      }
+    }
+  }
+
+  &--ticket {
+    & .sppt {
+      &__top {
+        margin-bottom: 1rem;
+        @include d-flex(row, center, space-between);
+      }
+
+      &__tbl {
+        @include d-flex(column, flex-start, flex-start);
+        flex: 1;
+        border-radius: 0.938rem;
+        margin-bottom: 1.25rem;
+        border: 1px solid $border-color;
+        overflow: scroll;
+        @include custom-scrollbar;
+        position: relative;
+        z-index: 5;
+      }
+
+      &__data {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+      }
+
+      &__dept,
+      &__sub,
+      &__status,
+      &__upd {
+        width: 100%;
+        padding: 0.563rem 1rem;
+      }
+
+      &__sub {
+        color: rgba($black, 80%);
+      }
+
+      &__btm {
+        @include d-flex(row, center, space-between);
+      }
+    }
+
+    & .table {
+      &__head {
+        padding: 0.813rem 1rem;
+      }
+    }
+  }
+
+  &--annouc {
+    & .sppt {
+      &__cont {
+        padding: 1.5rem
+      }
+    }
+  }
+
+  &--ntwrk {
+    & .sppt {
+      &__top {
+        @include d-flex(row, flex-start, flex-end);
+      }
+
+      &__btm {
+        @include d-flex(row, center, space-between);
+      }
+    }
+  }
+
+  &--reslvd {
+    & .sppt {
+      &__heading {
+        color: $green;
+        margin-bottom: 1.25rem;
+      }
+    }
+
+    & .resol {
+      padding: 0px;
+      max-width: 100%;
+
+      &__btn {
+        background-color: $red;
+      }
+    }
+  }
+
+  &--knwl {
+    & .sppt {
+      &__srch {
+        border-radius: 4px;
+        margin-bottom: 1.25rem;
+      }
+
+      &__btn {
+        padding-block: 6px;
+      }
+
+      &__cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+        margin-bottom: 2.938rem;
+      }
+
+      &__card {
+        @include d-flex(row, center, flex-start);
+        position: relative;
+        gap: 1rem;
+        overflow: hidden;
+        border: 1px solid rgba($black, 5%);
+        padding: 1rem;
+        height: 84px;
+        border-radius: 0.5rem;
+      }
+
+      &__icon {
+        flex: 2;
+      }
+
+      &__img {
+        position: absolute;
+        left: 1.25rem;
+        top: 1.25rem;
+        z-index: 0;
+
+        img {
+          width: 2.25rem;
+          height: 2.25rem;
+        }
+      }
+
+      &__bg {
+        position: absolute;
+        top: -30px;
+        left: -25px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        display: inline-block;
+        background: $linear;
+        z-index: 0;
+      }
+
+      &__content {
+        @include d-flex(row, center, space-between);
+        flex-wrap: wrap;
+        grid-column-gap: 1rem;
+        flex: 15;
+      }
+
+      &__desc {
+        color: rgba($black, .4);
+        margin-top: 6px;
+        width: 100%;
+      }
+
+      &__btns {
+        padding: 6px 11px;
+        background-color: $tertiary-color;
+        color: $primary-color;
+        border: transparent;
+        font-weight: $fw-bold;
+        border-radius: 4px
+      }
+
+      &__subicon {
+        width: 1.5rem;
+        height: 1.5rem;
+        padding: 1px 4px;
+
+        img {
+          width: 1rem;
+          height: 1.375rem;
+          display: block;
+        }
+      }
+    }
+
+    & .nav {
+      &__srch {
+        width: 100%;
+        padding: 5px;
+        padding-left: 0.75rem;
+      }
+    }
+  }
+
+  &--apl {
+    .sppt {
+      &__pgn {
+        @include d-flex(row, center, space-between);
+      }
+    }
+  }
+
+  &--rqst {
+    & .detail {
+      &__label {
+        margin-bottom: 1.25rem;
+        width: 100%;
+      }
+    }
+
+    & .sppt {
+      &__cont {
+        background-color: inherit;
+        padding: 0rem 1.5rem 0rem 1.5rem;
+        position: relative;
+        overflow-y: scroll;
+        @include custom-scrollbar;
+        z-index: 99;
+        margin-block: 1.5rem;
+
+      }
+
+      &__wrap {
+        overflow: initial;
+        margin-bottom: .5rem;
+      }
+
+      &__heading {
+        margin-bottom: 1.5rem;
+      }
+
+      &__addInfo {
+        @include d-flex(row, flex-start, space-between);
+        gap: 1.25rem;
+      }
+
+      &__textarea {
+        & :focus {
+          border: 1px solid $secondary-color;
+          outline: none;
+        }
+      }
+
+      &__atched {
+        margin-bottom: 1.5rem;
+      }
+
+      &__title {
+        margin-bottom: 2px
+      }
+
+      &__inbox {
+        @include d-flex(row, center, space-between);
+        gap: 1rem;
+        padding: 6px 6px 6px 1.063rem;
+        border: 1px dotted rgba($black, 16%);
+        border-radius: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      &__label {
+        text-align: center;
+        padding: 0.625rem 1.5rem;
+        border: 1px solid $background-color;
+        border-radius: 4px;
+        color: $primary-color;
+        cursor: pointer;
+        transition: 0.5 ease;
+
+        &:hover {
+          border-color: $primary-color;
+        }
+      }
+
+      &__file-inpt {
+        display: none;
+      }
+
+      &__desc {
+        color: rgba($black, 50%);
+      }
+
+      &__btns {
+        @include d-flex(row, flex-start, flex-start);
+        gap: 1rem;
+      }
+
+      &__submit,
+      &__cancel {
+        max-width: 13.438rem;
+        width: 100%;
+      }
+    }
+  }
+}
