@@ -1,0 +1,48 @@
+.profi {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: 50;
+  opacity: 0;
+  background-color: rgb($black, 50%);
+  transition: .3s all ease-in;
+
+  &__wrap {
+    width: 100%;
+    max-width: 256px;
+    padding: 1rem;
+    background-color: $white;
+    border-radius: 12px;
+    position: absolute;
+    right: 4rem;
+    top: 6rem;
+    @include d-flex (column, flex-start, flex-start);
+    gap: 12px;
+  }
+
+  &__item {
+    border: 1px solid $background-color;
+    border-radius: 6px;
+    transition: .3s all;
+
+    &:hover {
+      box-shadow: $shadow;
+    }
+  }
+
+  &__link {
+    padding: 10px;
+    display: block;
+    color: $black;
+  }
+
+  &--show {
+    opacity: 1;
+    display: block;
+    transition: .3s all ease;
+    background-color: rgb($black, 50%);
+  }
+}
