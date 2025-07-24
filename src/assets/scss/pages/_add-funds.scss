@@ -1,0 +1,58 @@
+.fund {
+  @include d-flex(row, flex-start, flex-start);
+  width: 100%;
+
+  &__cont {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    background-color: $white;
+  }
+
+  &__heading {
+    margin-bottom: 1.063rem;
+  }
+
+  &__inner {
+    margin-bottom: 1rem;
+  }
+
+  &__content {
+    @include d-flex(row, center, space-between);
+    padding: 0.75rem;
+    border-radius: 6px;
+
+    &:nth-child(odd) {
+      background-color: $background-color;
+    }
+  }
+
+  &__amt {
+    margin-bottom: 1.25rem;
+  }
+
+  &__pymt {
+    margin-bottom: 1.5rem;
+  }
+
+  &__dpst {
+    flex: 2.3;
+    width: 100%;
+  }
+
+  &__pri {
+    flex: 1;
+    width: 100%;
+  }
+
+  &__btm {
+    @include d-flex(row, center, space-between);
+    gap: 1rem;
+  }
+
+  &__note {
+    font-style: italic;
+    font-weight: $fw-regular - 100;
+    color: $black;
+  }
+}
