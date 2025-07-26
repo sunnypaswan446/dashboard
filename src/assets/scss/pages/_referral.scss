@@ -1,0 +1,152 @@
+.rfrrl {
+  &--ref {
+    & .cards {
+      grid-template-columns: repeat(3, 1fr);
+      margin-bottom: 1.25rem;
+
+      & .card {
+        @include d-flex(row, flex-start, flex-start);
+        flex-direction: row;
+        min-height: 150px;
+        gap: 2.5rem;
+        box-shadow: $shadow;
+        background-color: $white;
+        padding: 1.5rem;
+        cursor: initial;
+
+        &__bg {
+          top: -48px;
+          left: -57px;
+          width: 179px;
+          height: 179px;
+        }
+
+        &__img {
+          position: unset;
+          max-width: 5rem;
+          width: 100%;
+          height: auto;
+        }
+
+        &__icon {
+          max-width: 5rem;
+          height: auto;
+        }
+
+        &__heading,
+        &__subhead {
+          max-width: none;
+        }
+
+      }
+    }
+
+    & .rfrrl {
+      &__cont {
+        background-color: $background-color;
+        height: 100%;
+      }
+
+      &__subhead {
+        margin-bottom: 0.75rem;
+      }
+
+      &__links {
+        border-radius: 0.75rem;
+        border: 0.5px solid $border-color;
+        margin-bottom: 1.25rem;
+        background-color: $white;
+        padding: 1.25rem;
+      }
+
+      &__link {
+        @include d-flex(row, center, space-between);
+        background: rgba($gray, 32%);
+        padding: 9px 0.75rem 9px 10px;
+        border-radius: 4px;
+      }
+
+      &__icon {
+        img {
+          width: 1.5rem;
+          height: 1.5rem;
+          display: block;
+          cursor: pointer;
+        }
+      }
+
+      &__details {
+        @include d-flex(row, flex-start, space-between);
+        gap: 1.25rem;
+        margin-bottom: 1.5rem;
+      }
+
+      &__detail {
+        flex: 1;
+        width: 100%;
+      }
+
+      &__text {
+        margin-bottom: 2px;
+        color: rgba($black, 80%);
+      }
+
+      &__pri {
+        width: 100%;
+        border: 1px solid $border-color;
+        padding: 0.875rem 0.875rem 0.75rem 0.75rem;
+        border-radius: 6px;
+        background-color: $white;
+      }
+
+      &__btn {
+        margin-inline: auto;
+        margin-bottom: 1.25rem;
+      }
+
+      &__msg_title {
+        text-align: center;
+        padding: 0.75rem 0px;
+        background-color: $tertiary-color;
+      }
+
+      &__msg {
+        background-image: $linear-light;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+    }
+  }
+
+  &--terms {
+    & .rfrrl {
+      &__cont {
+        padding: 1.5rem;
+      }
+
+      &__heading {
+        margin-bottom: 0.75rem;
+      }
+
+      &__pri {
+        background: $linear-light;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      }
+
+      &__title {
+        color: rgb($black, 80%);
+        margin-bottom: 1.25rem;
+      }
+    }
+
+    & .bullet {
+      padding: 0px;
+      max-width: 100%;
+
+      &__item {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
