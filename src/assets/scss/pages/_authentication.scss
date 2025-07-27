@@ -1,0 +1,84 @@
+.authn {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: $white;
+  border-radius: 0.75rem;
+  padding-block: 1rem;
+
+  &__cont {
+    @include d-flex-center;
+    text-align: center;
+    height: 100%;
+    padding-inline: 1rem;
+    width: 100%;
+    overflow: hidden scroll;
+    @include custom-scrollbar;
+
+    &::before {
+      content: "";
+      width: 100%;
+      max-width: 9.75rem;
+      height: 8.188rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: url("../../assets/images/authentication-right.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: 1;
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      max-width: 10.375rem;
+      height: 5.688rem;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: url("../../assets/images/authentication-left.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: 100% 100%;
+      z-index: 1;
+    }
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  &__heading {
+    margin-bottom: 1rem;
+  }
+
+  &__sub-heading {
+    margin-bottom: 0.625rem;
+    color: rgba($black, 80%);
+
+    &--dis {
+      font-size: 1.125rem;
+      font-family: $font-jakarta;
+      font-weight: $fw-medium;
+      color: $primary-color;
+    }
+  }
+
+  &__desc {
+    padding: 1rem 0.75rem 0.875rem 1rem;
+    background-color: $background-color;
+    color: rgba($primary-color, 100%);
+    border-radius: 0.375rem;
+    margin-bottom: 2rem;
+  }
+
+  &__img {
+    margin-bottom: 1.5rem;
+
+    & img {
+      width: 100%;
+      max-width: 34.577rem;
+    }
+  }  
+}
