@@ -1,0 +1,379 @@
+.dmn {
+  &__menu {
+    margin-bottom: 1.25rem;
+  }
+
+  & .info {
+    &__fund {
+      margin-bottom: 1.25rem;
+    }
+  }
+
+  &__cont {
+    width: 100%;
+    height: 100%;
+    @include d-flex(column, flex-start, flex-start);
+    padding: 1rem 1rem 1rem;
+  }
+
+  &__tbl {
+    @include d-flex(column, flex-start, flex-start);
+    flex: 1;
+    border-radius: 15px;
+    margin-bottom: 1.25rem;
+    border: 1px solid rgb($black, 16%);
+    overflow: scroll;
+    position: relative;
+    z-index: 5;
+    @include custom-scrollbar;
+
+    & .table {
+      &__head {
+        padding: 13px 1rem;
+      }
+    }
+  }
+
+  &__top {
+    margin-bottom: 1rem;
+    @include d-flex(row, center, space-between);
+
+    & .srch {
+      width: 100%;
+      max-width: 164px;
+      margin-right: 0
+    }
+  }
+
+  &__data {
+    @include d-flex(column, flex-start, flex-start);
+    flex: 1;
+  }
+
+  &__btm {
+    @include d-flex(row, center, space-between)
+  }
+
+
+  // Manage DNS
+  &--dns {
+    .dmn {
+      &__cont {
+        padding: 1.25rem 1rem;
+      }
+
+      &__tabs {
+        @include d-flex(row, flex-start, flex-start);
+        gap: 10px;
+        margin-bottom: 1rem;
+
+        & .item {
+          width: 100%;
+          max-width: 100%;
+          margin-bottom: 0px;
+        }
+      }
+
+      &__tbl {
+        margin-bottom: 0;
+        display: none;
+      }
+
+      &__head {
+        @include d-flex(row, flex-start, flex-start);
+        gap: 10px;
+        padding: 1.25rem 1.25rem 0.75rem 1.25rem;
+        border-bottom: 1px solid $border-color;
+        margin-bottom: 1rem;
+      }
+
+      &__top {
+        padding-inline: 1rem;
+
+        & .nav {
+          &__srch {
+            width: 100%;
+            max-width: 15.75rem;
+          }
+        }
+      }
+
+    }
+
+    & .active {
+      display: flex
+    }
+  }
+
+  // Manage Reverse Domain 
+  &--rvrs {
+    .dmn {
+      &__addPTR {
+        padding-inline: 45px;
+
+        & img {
+          filter: brightness(0) saturate(100%) invert(100%) sepia(8%) saturate(7500%) hue-rotate(206deg) brightness(119%) contrast(94%);
+          width: 12px;
+        }
+
+        & span {
+          white-space: nowrap;
+        }
+      }
+
+      &__top {
+        margin-bottom: 1.5rem;
+      }
+
+      &__data {
+        & .table {
+          &__head--ser {
+            @include d-flex(row, center, flex-start)
+          }
+        }
+
+        & .dmn {
+          &__upImg {
+            max-width: 14px;
+          }
+        }
+      }
+
+      &__btm {
+        margin: 1.25rem;
+        @include d-flex(row, flex-start, flex-start);
+        gap: 1rem;
+      }
+    }
+  }
+
+  // Renew Domain
+  &--renew {
+    & .error {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      border-radius: .75rem;
+      padding-block: 1rem;
+
+      &::before {
+        content: "";
+        width: 100%;
+        max-width: 10.375rem;
+        height: 5.688rem;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: url("../../assets/images/authentication-left.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 100% 100%;
+        z-index: 1;
+      }
+
+      &::after {
+        content: "";
+        width: 100%;
+        max-width: 9.75rem;
+        height: 8.188rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: url(../../assets/images/authentication-right.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: 1;
+      }
+
+      &__cont {
+        @include d-flex(row, flex-start, center);
+        text-align: center;
+        height: 100%;
+        padding-inline: 1rem;
+        width: 100%;
+        overflow: scroll;
+        @include custom-scrollbar;
+      }
+
+      &__inner {
+        @include d-flex(column, center, center);
+      }
+
+      &__img {
+        max-width: 766px;
+        margin-bottom: 1.5rem;
+        position: relative;
+      }
+
+      &__msg {
+        position: absolute;
+        width: 100%;
+        max-width: 155px;
+        max-height: 140px;
+        top: 50%;
+        text-align: center;
+        left: 50%;
+        transform: translate(-45%, -50%);
+
+        & span {
+          font-size: inherit;
+          font-weight: inherit;
+          font-family: inherit;
+          background: $linear-light;
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+
+      &__heading {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  // Register Domain
+  &--reg {
+    & .dmn {
+      &__cont {
+        padding: 0;
+        background-color: $background-color;
+        overflow: scroll;
+        @include custom-scrollbar;
+      }
+
+      &__inner {
+        border: none;
+        border-radius: .5rem;
+        overflow: hidden;
+        background-color: $white
+      }
+
+      &__banner {
+        @include d-flex(row, center, space-between);
+        gap: 1rem;
+        flex: 1;
+        padding: 0px 2rem;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+        height: 100%;
+        max-height: 18.313rem;
+        background-image: url("../../assets/images/register-bg.svg"), $linear-light;
+        background-position: bottom -100px right 25px, center;
+        background-size: cover, auto;
+        background-repeat: no-repeat;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+
+        &::before {
+          content: "";
+          background-image: url("../../assets/images/register-after.svg");
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 999;
+          width: 100%;
+          max-width: 11.5rem;
+          max-height: 11.5rem;
+          height: 100%;
+          transform: translate(-30%, -40%);
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+
+        &::after {
+          content: "";
+          background-image: url("../../assets/images/register-after.svg");
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          z-index: 999;
+          width: 100%;
+          max-width: 11.5rem;
+          max-height: 11.5rem;
+          height: 100%;
+          transform: translate(25%, 50%);
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+      }
+
+      &__head {
+        @include d-flex(row, center, flex-start);
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+      }
+
+      &__prioptn {
+        @include d-flex(row, center, space-between);
+        border-bottom: 1px solid rgb($primary-color, 32%);
+      }
+
+      &__form {
+        width: 100%;
+        max-width: 31.125rem;
+        @include d-flex(row, center, space-between);
+        gap: 1rem;
+        padding: 5px;
+        background: $white;
+        border-radius: 8px;
+
+        input {
+          width: 100%;
+          padding: 10px;
+          border: none;
+          outline: none;
+        }
+      }
+
+      &__heading {
+        color: $white;
+        margin-bottom: 0.75rem;
+      }
+
+      &__desc {
+        color: rgb($white, 80%);
+      }
+
+      &__dom {
+        width: 100%;
+        padding: 13px 0px 13px 30px;
+        color: $black;
+
+        &--head {
+          color: rgb($black, 70%);
+        }
+      }
+
+      &__price,
+      &__trans,
+      &__renew {
+        width: 100%;
+        padding: 13px 0px 13px 30px;
+        color: $primary-color;
+
+        &--head {
+          color: rgb($black, 70%);
+        }
+      }
+
+      &__list {
+        @include d-flex(row, center, space-between);
+
+        &:nth-child(even) {
+          background: $tertiary-color;
+        }
+      }
+
+      &__net {
+        color: $black;
+      }
+
+      &__year {
+        color: rgba($black, 52%);
+      }
+    }
+  }
+}
