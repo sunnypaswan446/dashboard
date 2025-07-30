@@ -494,23 +494,23 @@ export const domainMenu = [
       },
       {
         labelText: "Manage DNS",
-        labelLink: "/autoRenew",
+        labelLink: "/domain/manage-dns",
       },
       {
         labelText: "Manage Reverse Domains",
-        labelLink: "/nameServers",
+        labelLink: "/domain/manage-reverse-domains",
       },
       {
         labelText: "Renew Domain",
-        labelLink: "/Regsitrar Lock",
+        labelLink: "/domain/renew-domain",
       },
       {
         labelText: "Register a New Domain",
-        labelLink: "/ContactInformation",
+        labelLink: "/domain/register-new-domain",
       },
       {
         labelText: "Private Nameservers",
-        labelLink: "/privateNameserver",
+        labelLink: "/domain/private-nameservers",
       },
     ],
   },
@@ -526,27 +526,27 @@ export const domainMenu = [
     accordionInfo: [
       {
         labelText: "Overview",
-        labelLink: "/Overview",
+        labelLink: "/domain/overview",
       },
       {
         labelText: "Auto Renew",
-        labelLink: "/autoRenew",
+        labelLink: "/domain/auto-renew",
       },
       {
         labelText: "Nameservers",
-        labelLink: "/nameServers",
+        labelLink: "/domain/nameservers",
       },
       {
         labelText: "Registrar Lock",
-        labelLink: "/Regsitrar Lock",
+        labelLink: "/domain/registrar-lock",
       },
       {
         labelText: "Contact Information",
-        labelLink: "/ContactInformation",
+        labelLink: "/domain/contact-information",
       },
       {
         labelText: "Private Nameservers",
-        labelLink: "/privateNameserver",
+        labelLink: "/domain/private-nameservers",
       },
     ],
   },
@@ -562,7 +562,7 @@ export const sslMenu = [
       },
       {
         labelText: "Purchase a new SSL Certificate",
-        labelLink: "/purchaseSSL",
+        labelLink: "/ssl/purchase-ssl-certificate",
       },
     ],
   },
@@ -585,19 +585,19 @@ export const supportMenu = [
       },
       {
         labelText: "Announcements",
-        labelLink: "/annoucements",
+        labelLink: "/support/announcements",
       },
       {
-        labelText: "Knowlegebase",
-        labelLink: "/knowlegebase",
+        labelText: "Knowledgebase",
+        labelLink: "/support/knowledgebase",
       },
       {
         labelText: "Network status",
-        labelLink: "/networkStatus",
+        labelLink: "/support/network-status",
       },
       {
         labelText: "Open ticket",
-        labelLink: "/openTicket",
+        labelLink: "/support/open-ticket",
       },
     ],
   },
@@ -613,7 +613,7 @@ export const referralMenu = [
       },
       {
         labelText: "Program Terms",
-        labelLink: "/programTerms",
+        labelLink: "/referrals/program-terms",
       },
     ],
   },
