@@ -1,22 +1,15 @@
 import { useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
-import {
-  asideSubMenus,
-  availCredit,
-  addButton,
-  editButton,
-} from "../../mock-data/data";
-import Accrodion from "../AccordionSubmenus/";
-import Button from "../Button";
+import { menu, accordionMenus } from "../../types/type";
 import AccordionSubMenus from "../../Components/AccordionSubmenus";
 
 interface props {
   data: menu[];
+  asideData?: accordionMenus[];
 }
 
 const Index: React.FC<props> = ({ data, asideData }) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(0); // Set initial selectedIndex to 0
-  const sliderRef = useRef<HTMLDivElement | null>(null);
   const menuItemsRef = useRef<(HTMLLIElement | null)[]>([]);
 
   // This hook is triggered when selectedIndex changes (i.e., when a menu item is clicked).
@@ -58,7 +51,6 @@ const Index: React.FC<props> = ({ data, asideData }) => {
             {data &&
               data.map((menuItem, index) => {
                 const { menuText, menuIcon } = menuItem;
-                const { path, altText, width, height } = menuIcon;
                 return (
                   <li
                     className={`menus__item ${
@@ -80,15 +72,17 @@ const Index: React.FC<props> = ({ data, asideData }) => {
                           : "menus__links"
                       }
                     >
-                      <div className="menus__img">
-                        <img
-                          src={path}
-                          alt={altText}
-                          className="menus__icon"
-                          width={width}
-                          height={height}
-                        />
-                      </div>
+                      {menuIcon && (
+                        <div className="menus__img">
+                          <img
+                            src={menuIcon.path}
+                            alt={menuIcon.altText}
+                            className="menus__icon"
+                            width={menuIcon.width}
+                            height={menuIcon.height}
+                          />
+                        </div>
+                      )}
                       <p className="text__small menus__label">{menuText}</p>
                     </NavLink>
                   </li>
@@ -100,8 +94,10 @@ const Index: React.FC<props> = ({ data, asideData }) => {
 
       <div className="layout__aside layout__aside-wrap aside__menus">
         {asideData &&
-          asideData.map((menuWrap) => {
-            return <AccordionSubMenus data={menuWrap} />;
+          asideData.map((menuWrap: accordionMenus) => {
+            return (
+              <AccordionSubMenus key={menuWrap.headerText} data={menuWrap} />
+            );
           })}
       </div>
     </div>

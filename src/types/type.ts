@@ -40,7 +40,7 @@ export interface accordionMenus {
 }
 
 export interface FormProps {
-  formData: {
+  formData?: {
     logo: { src: string; alt: string };
     heading: string;
     description: string;
