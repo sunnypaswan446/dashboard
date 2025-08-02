@@ -1,16 +1,11 @@
-import Aside from "../../Components/Aside";
-import Header from "../../Components/Header";
 import ContentArea from "../../Components/ContentArea";
-import { menus, sslMenu } from "../../mock-data/data";
+import { Outlet } from "react-router-dom";
 
 const index = () => {
   return (
     <>
-      <Header data={true} />
-      <div className="content">
-        <Aside data={menus} asideData={sslMenu} />
-        {/* <ContentArea /> */}
-      </div>
+      <ContentArea />
+      <Outlet />
     </>
   );
 };
