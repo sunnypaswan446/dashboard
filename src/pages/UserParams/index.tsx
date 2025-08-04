@@ -1,4 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -8,8 +9,9 @@ const Index = () => {
   const { id } = useParams();
   return (
     <div>
-      index:{id}
-      <button onClick={handleChange}>click to navigate</button>
+      <h2>Server Details: {id}</h2>
+      <button onClick={handleChange}>Back to Home</button>
+      <Outlet />
     </div>
   );
 };
