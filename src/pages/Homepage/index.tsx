@@ -6,14 +6,14 @@ import { menus, homepageMenu } from "../../mock-data/data";
 
 const Index = () => {
   return (
-    <>
+    <div>
       <Header data={true} />
       <div className="content">
         <Aside data={menus} asideData={homepageMenu} />
         <ContentArea />
       </div>
       <Footer />
-    </>
+    <div/>
   );
 };
 
