@@ -8,8 +8,8 @@ import {
   billingMenu,
   domainMenu,
   sslMenu,
-  supportMenu,
   referralMenu,
+  supportMenu,
 } from "../../mock-data/data";
 
 const Index = () => {
